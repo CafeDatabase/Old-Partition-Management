@@ -20,7 +20,7 @@ BEGIN
 		v_mascara:=substr(x.high_value,34,22);
 	    -- dbms_output.put_line(' fecha '||v_texto||' mascara '||v_mascara);
 	    if to_date(v_texto,v_mascara)<v_date then
-		    dbms_output.put_line('--alter table '||v_owner||'.'||v_table||' '||var_operation||' partition '||x.partition_name||'; --> anterior a '||v_date);
+		    dbms_output.put_line('alter table '||v_owner||'.'||v_table||' '||var_operation||' partition '||x.partition_name||'; --> before '||v_date);
 			v_size:=v_size+nvl(x.blocks*8,0);
 	    end if;
 		
@@ -29,7 +29,7 @@ BEGIN
         v_texto:=substr(x.high_value,12,19);
 		-- dbms_output.put_line(' fecha '||v_texto);
 	    if to_date(v_texto,'SYYYY-MM-DD HH24:MI:SS')<v_date then
-		    dbms_output.put_line('--alter table '||v_owner||'.'||v_table||' '||var_operation||' partition '||x.partition_name||'; --> anterior a '||v_date);
+		    dbms_output.put_line('alter table '||v_owner||'.'||v_table||' '||var_operation||' partition '||x.partition_name||'; --> before '||v_date);
 			
 			v_size:=v_size+nvl(x.blocks*8,0);
 	    end if;
@@ -47,7 +47,7 @@ BEGIN
 		v_mascara:=substr(x.high_value,34,22);
 	    -- dbms_output.put_line(' fecha '||v_texto||' mascara '||v_mascara);
 	    if to_date(v_texto,v_mascara)<v_date then
-		    dbms_output.put_line('--alter table '||v_owner||'.'||v_table||' '||var_operation||' subpartition '||x.subpartition_name||'; --> anterior a '||v_date);
+		    dbms_output.put_line('alter table '||v_owner||'.'||v_table||' '||var_operation||' subpartition '||x.subpartition_name||'; --> before '||v_date);
 			
 			v_size:=v_size+nvl(x.blocks*8,0);
 	    end if;
@@ -57,7 +57,7 @@ BEGIN
         v_texto:=substr(x.high_value,12,19);
 		-- dbms_output.put_line(' fecha '||v_texto);
 	    if to_date(v_texto,'SYYYY-MM-DD HH24:MI:SS')<v_date then
-		    dbms_output.put_line('--alter table '||v_owner||'.'||v_table||' '||var_operation||' subpartition '||x.subpartition_name||'; --> anterior a '||v_date);
+		    dbms_output.put_line('alter table '||v_owner||'.'||v_table||' '||var_operation||' subpartition '||x.subpartition_name||'; --> before '||v_date);
 			
 			v_size:=v_size+nvl(x.blocks*8,0);
 	    end if;
@@ -65,9 +65,9 @@ BEGIN
 	    end if;
 
 	end loop;
-	dbms_output.put_line('-- Se gestionarían un total de '||to_char(round(v_size/1024))||' MB en total.');
+	dbms_output.put_line('-- The amount of  '||to_char(round(v_size/1024))||' MB will be released.');
 exception
    when no_data_found then
-        dbms_output.put_line('La tabla '||v_owner||'.'||v_table||' no está particionada o no existe en el esquema.');
+        dbms_output.put_line('Table '||v_owner||'.'||v_table||' is not partitioned or doesn''t exist in schema.');
 END;
 /
