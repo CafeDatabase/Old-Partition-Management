@@ -27,14 +27,14 @@ The steps to generate the SQL maintenance code are:
 	-- SAMPLE OUTPUT --
 	
 	SQL> exec manage_old_partitions ('LABORATORIO','TEST_PARTICIONADO',add_months(sysdate,-54),'drop')
-alter table LABORATORIO.TEST_PARTICIONADO drop partition P1_TEST_PARTICIONADO_ABRIL_2018; --> before 01/09/18
-alter table LABORATORIO.TEST_PARTICIONADO drop partition P1_TEST_PARTICIONADO_AGOSTO_2018; --> before 01/09/18
-alter table LABORATORIO.TEST_PARTICIONADO drop partition P1_TEST_PARTICIONADO_JULIO_2018; --> before 01/09/18
-alter table LABORATORIO.TEST_PARTICIONADO drop partition P1_TEST_PARTICIONADO_JUNIO_2018; --> before 01/09/18
-alter table LABORATORIO.TEST_PARTICIONADO drop partition P1_TEST_PARTICIONADO_MAYO_2018; --> before 01/09/18
--- The amount of  8 MB will be released.
+	alter table LABORATORIO.TEST_PARTICIONADO drop partition P1_TEST_PARTICIONADO_ABRIL_2018; --> before 01/09/18
+	alter table LABORATORIO.TEST_PARTICIONADO drop partition P1_TEST_PARTICIONADO_AGOSTO_2018; --> before 01/09/18
+	alter table LABORATORIO.TEST_PARTICIONADO drop partition P1_TEST_PARTICIONADO_JULIO_2018; --> before 01/09/18
+	alter table LABORATORIO.TEST_PARTICIONADO drop partition P1_TEST_PARTICIONADO_JUNIO_2018; --> before 01/09/18
+	alter table LABORATORIO.TEST_PARTICIONADO drop partition P1_TEST_PARTICIONADO_MAYO_2018; --> before 01/09/18
+	-- The amount of  8 MB will be released.
 
- PL/SQL procedure successfully completed.
+	 PL/SQL procedure successfully completed.
 
 	-- SAMPLE OUTPUT --
 	
