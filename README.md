@@ -41,27 +41,24 @@ The steps to generate the SQL maintenance code are:
 	
 5- Once you check the SQL commands are generated properly, just execute them.
 
-SQL> alter table LABORATORIO.TEST_PARTICIONADO drop partition P1_TEST_PARTICIONADO_ABRIL_2018;
+	SQL> alter table LABORATORIO.TEST_PARTICIONADO drop partition P1_TEST_PARTICIONADO_ABRIL_2018;
 
-Table altered.
+	Table altered.
 
-SQL> alter table LABORATORIO.TEST_PARTICIONADO drop partition P1_TEST_PARTICIONADO_AGOSTO_2018;
+	SQL> alter table LABORATORIO.TEST_PARTICIONADO drop partition P1_TEST_PARTICIONADO_AGOSTO_2018;
 
-Table altered.
+	Table altered.
 
-SQL> alter table LABORATORIO.TEST_PARTICIONADO drop partition P1_TEST_PARTICIONADO_JULIO_2018;
+	SQL> alter table LABORATORIO.TEST_PARTICIONADO drop partition P1_TEST_PARTICIONADO_JULIO_2018;
 
-Table altered.
+	Table altered.
 
-SQL> alter table LABORATORIO.TEST_PARTICIONADO drop partition P1_TEST_PARTICIONADO_JUNIO_2018;
+	SQL> alter table LABORATORIO.TEST_PARTICIONADO drop partition P1_TEST_PARTICIONADO_JUNIO_2018;
 
-Table altered.
+	Table altered.
 
-SQL> alter table LABORATORIO.TEST_PARTICIONADO drop partition P1_TEST_PARTICIONADO_MAYO_2018;
+	SQL> alter table LABORATORIO.TEST_PARTICIONADO drop partition P1_TEST_PARTICIONADO_MAYO_2018;
 
-Table altered.
-	
-	
-	
+	Table altered.
 	
 Enjoy!
