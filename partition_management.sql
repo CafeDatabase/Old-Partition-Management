@@ -7,7 +7,7 @@ is
 BEGIN
    v_size:=0;
    dbms_output.enable(1000000);
-   if lower(v_operation) not in ('drop','truncate') then var_operation:='drop'; 
+   if lower(v_operation) not in ('drop','truncate') then var_operation:='drop';   -- Opción por defecto: DROP
    else var_operation:=v_operation;
    end if;
    
